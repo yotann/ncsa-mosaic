@@ -58,6 +58,7 @@
 #include "child.h"
 #include "list.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 #ifndef DISABLE_TRACE

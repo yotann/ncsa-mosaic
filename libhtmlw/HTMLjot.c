@@ -64,6 +64,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "inkstore.h"
 
 #ifndef VMS
@@ -161,7 +162,7 @@ NewJot(w, width, height)
 		JotCurrent->w = w;
 		JotCurrent->width = width;
 		JotCurrent->height = height;
-		JotCurrent->pix = NULL;
+		JotCurrent->pix = 0;
 		JotCurrent->drawing = False;
 		JotCurrent->strokes = NULL;
 		JotCurrent->last_stroke = NULL;
@@ -179,7 +180,7 @@ NewJot(w, width, height)
 		JotCurrent->w = w;
 		JotCurrent->width = width;
 		JotCurrent->height = height;
-		JotCurrent->pix = NULL;
+		JotCurrent->pix = 0;
 		JotCurrent->drawing = False;
 		JotCurrent->strokes = NULL;
 		JotCurrent->last_stroke = NULL;
@@ -245,7 +246,7 @@ ClearJot(hw, w, width, height)
 		return;
 	}
 
-	if (jptr->pix != NULL)
+	if (jptr->pix)
 	{
                 XSetForeground(XtDisplay(w), hw->html.drawGC,
 			hw->core.background_pixel);
@@ -323,12 +324,12 @@ EVJotExpose(w, data, event)
 		return;
 	}
 
-	if (jptr->pix == NULL)
+	if (!jptr->pix)
 	{
 		jptr->pix = XCreatePixmap(XtDisplay(w), XtWindow(w),
 			jptr->width, jptr->height,
 			XDefaultDepth(XtDisplay(w), XDefaultScreen(XtDisplay(w))));
-		if (jptr->pix == NULL)
+		if (!jptr->pix)
 		{
 			return;
 		}
@@ -386,7 +387,7 @@ EVJotPress(w, data, event)
 #endif /* MOTIF */
 	XDrawPoint(XtDisplay(w), XtWindow(w),
 			hw->html.drawGC, sptr->x, sptr->y);
-	if (jptr->pix != NULL)
+	if (jptr->pix)
 	{
 		XDrawPoint(XtDisplay(w), jptr->pix,
 				hw->html.drawGC, sptr->x, sptr->y);
@@ -440,7 +441,7 @@ EVJotMove(w, data, event)
 #endif /* MOTIF */
 	XDrawLine(XtDisplay(w), XtWindow(w), hw->html.drawGC,
 		jptr->last_x, jptr->last_y, sptr->x, sptr->y);
-	if (jptr->pix != NULL)
+	if (jptr->pix)
 	{
 		XDrawLine(XtDisplay(w), jptr->pix, hw->html.drawGC,
 			jptr->last_x, jptr->last_y, sptr->x, sptr->y);
@@ -494,7 +495,7 @@ EVJotRelease(w, data, event)
 #endif /* MOTIF */
 	XDrawLine(XtDisplay(w), XtWindow(w), hw->html.drawGC,
 		jptr->last_x, jptr->last_y, sptr->x, sptr->y);
-	if (jptr->pix != NULL)
+	if (jptr->pix)
 	{
 		XDrawLine(XtDisplay(w), jptr->pix, hw->html.drawGC,
 			jptr->last_x, jptr->last_y, sptr->x, sptr->y);

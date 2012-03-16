@@ -115,7 +115,7 @@ PUBLIC HTChildAnchor * HTAnchor_findChild
   child = HTChildAnchor_new ();
 #ifndef DISABLE_TRACE
   if (www2Trace) fprintf(stderr, "new Anchor %p named `%s' is child of %p\n",
-       (void*)child, (int)tag ? tag : (WWW_CONST char *)"" , (void*)parent); /* int for apollo */
+       (void*)child, tag ? tag : (WWW_CONST char *)"" , (void*)parent);
 #endif
   HTList_addObject (parent->children, child);
   child->parent = parent;

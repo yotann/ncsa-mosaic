@@ -52,6 +52,7 @@
  * mosaic-x@ncsa.uiuc.edu.                                                  *
  ****************************************************************************/
 #include "../config.h"
+#include <stdlib.h>
 /*
  * The following XPM hashing code if from the libXpm code, which I
  * am free to use as long as I include the following copyright:

@@ -62,6 +62,7 @@
  ****************************************************************************/
 #include "../config.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <X11/Intrinsic.h>
 #include "gifread.h"
 

@@ -261,7 +261,7 @@ int rplcLen=0,i,srchLen;
 	while (*start) {
 		if (!(found=strstr(start,srch))) {
 			if (rplcLen>srchLen) {
-				realloc((void *)dest,((strlen(dest)+strlen(start)+4)*sizeof(char)));
+				dest = realloc((void *)dest,((strlen(dest)+strlen(start)+4)*sizeof(char)));
 				strcat(dest,start);
 			}
 			else {
@@ -275,7 +275,7 @@ int rplcLen=0,i,srchLen;
 		for (i=0,next=found; i<srchLen; i++,next++);
 		*found='\0';
 		if (rplcLen>srchLen) {
-			realloc((void *)dest,((rplcLen+strlen(dest)+strlen(start)+4)*sizeof(char)));
+			dest = realloc((void *)dest,((rplcLen+strlen(dest)+strlen(start)+4)*sizeof(char)));
 			strcat(dest,start);
 			if (rplcLen) {
 				strcat(dest,rplc);

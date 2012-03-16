@@ -553,7 +553,7 @@ int HTLoadExtensionsConfigFile (char *fn)
       return -1;
     }
 
-  while(!(getline(l,MAX_STRING_LEN,f))) 
+  while(!(fgets(l,MAX_STRING_LEN,f)))
     {
       /* always get rid of leading white space for "line" -- SWP */
       for (ptr=l; *ptr && isspace(*ptr); ptr++);
