@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment=
+Encoding=UTF-8
+Exec=Mosaic
+GenericName=NCSA web browser
+Icon=mosaic_icon.png
+MimeType=
+Name=Mosaic
+Path=
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+Categories=Application;Network;Internet
