@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=NCSA Mosaic
+GenericName=Web Browser
+Comment=One of the first graphical web browsers
+Icon=/usr/share/icons/Mosaic.png
+Exec=Mosaic
+Terminal=false
+MimeType=text/html;x-scheme-handler/http;
+Categories=Network;WebBrowser;
+StartupNotify=false
