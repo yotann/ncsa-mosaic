@@ -28,16 +28,18 @@ Building
 On Arch Linux, use the [AUR
 package](https://aur.archlinux.org/packages.php?ID=35326).
 
-On Ubuntu:
-
-* First, install these packages:
+* On Ubuntu, install these packages:
 
       sudo apt-get install build-essential libmotif-dev libjpeg62-dev libpng12-dev x11proto-print-dev libxmu-headers libxpm-dev libxmu-dev
+      
+* On Fedora, install these packages:
 
-* Next, build with:
+      sudo dnf install @development-tools motif-devel libjpeg-turbo libpng12-devel xorg-x11-proto-devel libXmu-devel libXpm-devel
+
+Next, build with:
 
       make linux
 
-* Run!
+Run!
 
       src/Mosaic
