@@ -135,7 +135,7 @@ typedef enum
 /* This must be a straight string as it is included into a struct; 
    no tricks. */
 #define HOME_PAGE_DEFAULT \
-  "http://en.wikipedia.org/wiki/Mosaic_(web_browser)"
+  "http://www.ncsa.illinois.edu/enabling/mosaic"
 #endif /* not HOME_PAGE_DEFAULT */
 
 #ifndef WHATSNEW_PAGE_DEFAULT
