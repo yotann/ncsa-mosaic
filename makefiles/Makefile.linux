@@ -225,7 +225,7 @@ customflags =
 
 # ---------------------- END OF CUSTOMIZABLE OPTIONS -------------------------
 
-CFLAGS = -g $(sysconfigflags) $(prereleaseflags)
+CFLAGS = -fcommon -g $(sysconfigflags) $(prereleaseflags)
 
 # Don't worry about these -- for development purposes only.
 PURIFY = purify
